@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "36553d88-f471-4900-a4c2-527236f81842",
+		"name": "DU Coding Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register Plane",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n          \r\n            \"manufacturer\": \"AirBus\",                     \r\n            \"passengerCapacity\": 250,\r\n            \"originAirport\": \"Denver\",\r\n            \"destinationAirport\": \"Panama City\",\r\n            \"fareInAED\": \"3570.000\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/flynow/register/plane",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"flynow",
+						"register",
+						"plane"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Planes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/flynow/search/planes",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"flynow",
+						"search",
+						"planes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plane",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8084/flynow/register/plane/11",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"flynow",
+						"register",
+						"plane",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Planes Sort",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/flynow/search/sorted/planes?sort=originAirport,asc",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"flynow",
+						"search",
+						"sorted",
+						"planes"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "originAirport,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Planes Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/flynow/search/search-filters/planes?search=destinationAirport:'Abhu Dhabi' OR passengerCapacity>150 AND airline:'American Airlines'",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"flynow",
+						"search",
+						"search-filters",
+						"planes"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "destinationAirport:'Abhu Dhabi' OR passengerCapacity>150 AND airline:'American Airlines'"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
